@@ -1,0 +1,11 @@
+{
+  "name": "com.tapehat.fighting-framework",
+  "version": "0.0.1",
+  "displayName": "Fighting Framework",
+  "description": "A 2D/2.5D fighting game framework",
+  "unity": "6000.0",
+  "unityRelease": "37f1",
+  "author": {
+    "name": "Tape Hat Entertainment"
+  }
+}
