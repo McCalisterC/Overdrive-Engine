@@ -27,13 +27,13 @@ namespace FightingFramework.Core
         
         private int GetServiceCount()
         {
-            return System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance 
-                switch
+            var flags = System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance;
+            var field = GetType().BaseType?.GetField("services", flags);
+            if (field?.GetValue(this) is System.Collections.IDictionary dict)
             {
-                var flags => GetType().BaseType
-                    .GetField("services", flags)?
-                    .GetValue(this) is System.Collections.IDictionary dict ? dict.Count : 0
-            };
+                return dict.Count;
+            }
+            return 0;
         }
     }
 }
